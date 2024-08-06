@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loïc Bastaraud, Développeur web junior, passionné par les technologies .NET et web. Formé en développement web, j’ai acquis des compétences en front-end et back-end, tout en approfondissant ma passion pour le développement d'applications de bureau.">
+    <meta property="og:title" content="Loïc Bastaraud, Développeur web junior, passionné par les technologies .NET et web.">
+    <meta property="og:description" content="Loïc Bastaraud, Développeur web junior, passionné par les technologies .NET et web. Formé en développement web, j’ai acquis des compétences en front-end et back-end, tout en approfondissant ma passion pour le développement d'applications de bureau.">
+    <meta property="og:image" content="https://ntxsay.github.io/Portfolio-html-css/medias/sitebuild.webp">
+    <meta property="og:url" content="https://ntxsay.github.io/Portfolio-html-css/">
+    <meta name="twitter:card" content="Loïc Bastaraud, Développeur web junior, passionné par les technologies .NET et web. Formé en développement web, j’ai acquis des compétences en front-end et back-end, tout en approfondissant ma passion pour le développement d'applications de bureau.">
     <title>Portfolio - développeur web et .NET junior - Loïc Bastaraud</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,9 +27,11 @@
 </head>
 <body>
 <header>
-    <a href="#landing" class="header__logo">
-        <span><</span><h1>Loïc Bastaraud</h1><span>/></span>
-    </a>
+    <div class="header__logo">
+        <a href="#landing">
+            <span><</span><h1>Loïc Bastaraud</h1><span>/></span>
+        </a>
+    </div>
     <nav>
         <ul>
             <li><a href="#profile">Profil</a></li>
@@ -51,7 +59,7 @@
                 <div class="section__titleContainer">
                     <div class="codeTitleContainer">
                         <span class="code type">const</span>
-                        <span class="code variableName">thisIsMyName</span>
+                        <span class="code variableName">myName</span>
                         <span class="code equals">=</span>
                         <h2>
                             <span class="code value">'Loïc BASTARAUD'</span>
@@ -60,12 +68,12 @@
                     </div>
                     <h2>Développeur Web et .NET junior</h2>
                 </div>
-                <p class="documentSection__description">Formé en développement web, j’ai acquis des compétences en front-end et back-end, tout en approfondissant ma passion pour le développement d'applications de bureau..</p>
+                <p class="documentSection__description">Formé en développement web, j’ai acquis des compétences en front-end et back-end, tout en approfondissant ma passion pour le développement d'applications de bureau.</p>
                 <div class="landing__socialLinkContainer">
-                    <a href="https://github.com/LoicBastaraud" target="_blank" class="landing__btn">
+                    <a href="https://github.com/ntxsay?tab=repositories" target="_blank" class="landing__btn">
                         <img src="medias/Icons/github.svg" alt="Lien Github de Loïc Bastaraud">
                     </a>
-                    <a href="https://www.linkedin.com/in/loic-bastaraud-a4a1a61a3/" target="_blank" class="landing__btn">
+                    <a href="https://www.linkedin.com/in/lo%C3%AFc-bastaraud-63448817b/" target="_blank" class="landing__btn">
                         <img src="medias/Icons/317750_linkedin_icon.svg" alt="Lien Linkedin de Loïc Bastaraud">
                     </a>
                 </div>
@@ -79,8 +87,7 @@
                 </div>
             </div>
             <div class="imageContainer">
-                <img id="imgAppCsharp" class="landing__img" src="medias/final-2@0.5x.png" alt="Application UWP développée avec C# et XAML">
-<!--                <img id="imgAppCsharp2" class="landing__img" src="medias/Desktop_2.png" alt="Application UWP développée avec C# et XAML">-->
+                <img id="imgAppCsharp" class="landing__img" src="medias/sitebuild.webp" alt="Construction d'un site web">
             </div>
         </div>
     </section>
@@ -99,7 +106,9 @@
                 <h2>Découverte de la programmation</h2>
             </div>
             <p class="documentSection__description">
-                J'ai découvert la programmation en autodidacte en utilisant Visual Basic for Applications pour ajouter des fonctionnalités à mes documents PowerPoint. Cette première expérience m'a conduit à approfondir le développement d'applications de bureau avec Visual Basic.NET et Windows Forms. Par la suite, j'ai élargi mes compétences en passant à C#, en explorant WPF, Universal Windows Platform, ASP.NET Core, et WinUI.
+                J'ai découvert la programmation en autodidacte en utilisant Visual Basic for Applications pour ajouter des fonctionnalités à mes documents PowerPoint. 
+                Cette première expérience m'a conduit à approfondir le développement d'applications de bureau avec Visual Basic.NET et Windows Forms. 
+                Par la suite, j'ai élargi mes compétences en passant à C#, en explorant WPF, Universal Windows Platform, ASP.NET Core, et WinUI puis vers le Web.
             </p>
             <div class="skillsContainer">
                 <!--Développement web-->
