@@ -2,7 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - développeur web et .NET junior - Loïc Bastaraud</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -11,9 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-
     <script src="https://daybrush.com/scenejs/release/latest/dist/scene.min.js"></script>
     <script src="https://daybrush.com/scenejs-effects/release/latest/dist/effects.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
     <script src="modules/typewriter-effect/dist/core.js" defer></script>
     <script src="script.js" defer></script>
 </head>
@@ -23,37 +25,51 @@
         <span><</span><h1>Loïc Bastaraud</h1><span>/></span>
     </a>
     <nav>
-        <a href="#profile">Profil</a>
-        <a href="#projects">Projets</a>
-        <a href="#contact">Contact</a>
+        <ul>
+            <li><a href="#profile">Profil</a></li>
+            <li><a href="#projects">Projets</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-icon" id="menuIcon" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </nav>
 </header>
 <main>
-    <section id="landing" class="document-section">
-        <div class="splitContainer">
-            <div class="splitContainer__item splitContainer__item--left introduction">
+    <section id="menu">
+        <ul class="menu__list">
+            <li><button id="btnProfile">Profil</button></li>
+            <li><button id="btnProjects">Projets</button></li>
+            <li><button id="btnContact">Contact</button></li>
+        </ul>
+    </section>
+    <section id="landing" class="documentSection">
+        <div class="landing__content">
+            <div class="introduction">
                 <div class="section__titleContainer">
-                    <div class="section__titleContainer__myName">
+                    <div class="codeTitleContainer">
                         <span class="code type">const</span>
                         <span class="code variableName">thisIsMyName</span>
                         <span class="code equals">=</span>
-                        <h1>
+                        <h2>
                             <span class="code value">'Loïc BASTARAUD'</span>
-                        </h1>
+                        </h2>
                         <span class="code end">;</span>
                     </div>
                     <h2>Développeur Web et .NET junior</h2>
                 </div>
-                <p class="landing__description"></p>
+                <p class="documentSection__description">Formé en développement web, j’ai acquis des compétences en front-end et back-end, tout en approfondissant ma passion pour le développement d'applications de bureau..</p>
                 <div class="landing__socialLinkContainer">
                     <a href="https://github.com/LoicBastaraud" target="_blank" class="landing__btn">
-                        <img src="medias/Icons/211904_social_github_icon.svg" alt="Lien Github de Loïc Bastaraud">
+                        <img src="medias/Icons/github.svg" alt="Lien Github de Loïc Bastaraud">
                     </a>
                     <a href="https://www.linkedin.com/in/loic-bastaraud-a4a1a61a3/" target="_blank" class="landing__btn">
                         <img src="medias/Icons/317750_linkedin_icon.svg" alt="Lien Linkedin de Loïc Bastaraud">
                     </a>
                 </div>
-                <div class="landing__btnContainer">
+                <div class="navButtonsContainer">
                     <a href="#profile">
                         <span>En savoir plus</span><i class="fa-solid fa-chevron-down fa-bounce"></i>
                     </a>
@@ -62,66 +78,197 @@
                     </a>
                 </div>
             </div>
-            <div class="splitContainer__item splitContainer__item--right landing__imgContainer">
+            <div class="imageContainer">
                 <img id="imgAppCsharp" class="landing__img" src="medias/final-2@0.5x.png" alt="Application UWP développée avec C# et XAML">
 <!--                <img id="imgAppCsharp2" class="landing__img" src="medias/Desktop_2.png" alt="Application UWP développée avec C# et XAML">-->
             </div>
         </div>
     </section>
-    <section id="profile" class="document-section">
-        <div class="splitContainer">
-            <div class="splitContainer__item splitContainer__item--left skills">
-                <div id="frontEndSkills" class="skillsContainer__skills">
-                    <img src="medias/Icons/file-type-html.svg" alt="Compétence : création de pages Web avec HTML 5">
-                    <img src="medias/Icons/file-type-css.svg" alt="Compétence : création de pages Web avec CSS">
-                    <img src="medias/Icons/WinUI_Icon.svg" alt="Compétence : création d'interfaces utilisateur avec XAML">
-                    <img src="medias/Icons/javascript-js.svg" alt="Compétence : création de page Web dynamique avec JavaScript">
-                    <img src="medias/Icons/react.svg" alt="Compétence : création de page Web dynamique avec React">
+    <section id="profile" class="documentSection">
+        <div class="documentSection__content">
+            <div class="section__titleContainer">
+                <div class="codeTitleContainer">
+                    <span class="code type">let</span>
+                    <span class="code variableName">currentSection</span>
+                    <span class="code equals">=</span>
+                    <h2>
+                        <span class="code value">'Mon profil'</span>
+                    </h2>
+                    <span class="code end">;</span>
                 </div>
-                <div id="backEndSkills" class="skillsContainer__skills">
-                    <img src="medias/Icons/node-js.svg" alt="Compétence : création de projets backend avec Node.js et Express">
-
-                    <img src="medias/Icons/c-sharp-c.svg" alt="Compétence : création de projets .NET avec C#">
-                    <img src="medias/Icons/NET_Core_Logo.svg" alt="Compétence : création de projets .NET avec ASP.NET">
-                </div>
-                <div id="toolsSkills" class="skillsContainer__skills">
-                    <img src="medias/Icons/visual-studio-code.svg" alt="Compétence : utilisation de l'éditeur Visual Studio Code">
-                    <img src="medias/Icons/visual-studio.svg" alt="Compétence : utilisation de l'IDE Visual Studio">
-                    <img src="medias/Icons/JetBrains_Rider_Icon.svg" alt="Compétence : utilisation de l'IDE JetBrains Rider">
-                    <img src="medias/Icons/2993773_git_social%20media_icon.svg" alt="Compétence : utilisation de Git">
-                    <img src="medias/Icons/211904_social_github_icon.svg" alt="Compétence : utilisation de la plateforme Github">
-                </div>
+                <h2>Découverte de la programmation</h2>
             </div>
-            <div class="splitContainer__item splitContainer__item--right introduction">
-                <div class="section__titleContainer">
-                    <div class="section__titleContainer__myName">
-                        <span class="code type">let</span>
-                        <span class="code variableName">currentSection</span>
-                        <span class="code equals">=</span>
-                        <h1>
-                            <span class="code value">'Mon profil'</span>
-                        </h1>
-                        <span class="code end">;</span>
+            <p class="documentSection__description">
+                J'ai découvert la programmation en autodidacte en utilisant Visual Basic for Applications pour ajouter des fonctionnalités à mes documents PowerPoint. Cette première expérience m'a conduit à approfondir le développement d'applications de bureau avec Visual Basic.NET et Windows Forms. Par la suite, j'ai élargi mes compétences en passant à C#, en explorant WPF, Universal Windows Platform, ASP.NET Core, et WinUI.
+            </p>
+            <div class="skillsContainer">
+                <!--Développement web-->
+                <article class="skillTheme">
+                    <div class="skillTheme__header">
+                        <img src="medias/Icons/file-type-html.svg" alt="Compétence : création de pages Web avec HTML 5">
                     </div>
-                    <h2>Découverte de la programmation</h2>
-                </div>
-                <p class="landing__description">
-                    J'ai découvert la programmation en autodidacte en utilisant Visual Basic for Applications pour ajouter des fonctionnalités à mes documents PowerPoint. Cette première expérience m'a conduit à approfondir le développement d'applications de bureau avec Visual Basic.NET et Windows Forms. Par la suite, j'ai élargi mes compétences en passant à C#, en explorant WPF, Universal Windows Platform, ASP.NET Core, et WinUI.
-                </p>
-                <div class="landing__btnContainer">
-                    <a href="#projects">
-                        <span>Mes projets</span><i class="fa-solid fa-chevron-down fa-bounce"></i>
-                    </a>
-                    <a href="#landing">
-                        <span>Revenir à l'accueil</span><i class="fa-solid fa-chevron-up fa-bounce"></i>
-                    </a>
-                </div>
+                    <h3 class="skillTheme__title">Développement web</h3>
+                    <p class="skillTheme__description">Développement du front-end et du back-end d'un site web.</p>
+                    <h4 class="skillTheme__title">Langages et frameworks</h4>
+                    <ul class="skillTheme__skills">
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création de pages Web avec HTML 5">
+                                <img src="medias/Icons/file-type-html.svg" alt="Compétence : création de pages Web avec HTML 5">
+                                <span>HTML</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : mise en forme de pages Web avec CSS">
+                                <img src="medias/Icons/file-type-css.svg" alt="Compétence : mise en forme de pages Web avec CSS">
+                                <span>CSS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div id="scssSkill" class="skillTheme__skill" data-tooltip="Compétence : mise en forme de pages Web avec scss">
+                                <img src="medias/Icons/file-type-scss2.svg" alt="Compétence : mise en forme de pages Web avec scss">
+                                <span>SCSS</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création de page Web dynamique avec JavaScript">
+                                <img src="medias/Icons/javascript-js.svg" alt="Compétence : création de page Web dynamique avec JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création de page Web dynamique avec React">
+                                <img src="medias/Icons/react.svg" alt="Compétence : création de page Web dynamique avec React">
+                                <span>React</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création de projets backend avec Node.js et Express">
+                                <img src="medias/Icons/node-js.svg" alt="Compétence : création de projets backend avec Node.js et Express">
+                                <span>Node.js</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création de bases de données avec MongoDB">
+                                <img src="medias/Icons/mongodb-original-wordmark.svg" alt="Compétence : création de bases de données avec MongoDB">
+                                <span>MongoDB</span>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <!--Développement web-->
+                <article class="skillTheme">
+                    <div class="skillTheme__header">
+                        <img src="medias/Icons/WinUI_Icon.svg" alt="Développment d'applications de bureau avec C#">
+                    </div>
+                    <h3 class="skillTheme__title">Développement logiciel</h3>
+                    <p class="skillTheme__description">Développement d'applications de bureau et mobile</p>
+                    <h4 class="skillTheme__title">Langages et frameworks</h4>
+                    <ul class="skillTheme__skills">
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création de projets d'application .NET (Windows Forms, WPF, UWP, WinUI, .NET MAUI)avec C#">
+                                <img src="medias/Icons/c-sharp-c.svg" alt="Compétence : création de projets d'application .NET (Windows Forms, WPF, UWP, WinUI, .NET MAUI)avec C#">
+                                <span>C#</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création d'applications de bureau avec Windows Forms et C#">
+                                <img src="medias/Icons/microsoft-net-logo-svg-vector.svg" alt="Compétence : création d'applications de bureau avec Windows Forms et C#">
+                                <span>WinForms</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création d'applications de bureau avec WPF et C#">
+                                <img src="medias/Icons/microsoft-net.svg" alt="Compétence : création d'applications de bureau avec WPF et C#">
+                                <span>WPF</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création d'applications de bureau avec UWP et C#">
+                                <img src="medias/Icons/WinUI_Icon.svg" alt="Compétence : création d'applications de bureau avec UWP et C#">
+                                <span>UWP</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création d'applications de bureau avec WinUI et C#">
+                                <img src="medias/Icons/WinUI_Icon.svg" alt="Compétence : création d'applications de bureau avec WinUI et C#">
+                                <span>WinUI</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création d'applications de bureau avec .NET MAUI et C#">
+                                <img src="medias/Icons/maui.webp" alt="Compétence : création d'applications de bureau avec .NET MAUI et C#">
+                                <span>.NET MAUI</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Compétence : création d'application Web API avec ASP.NET Core et C#">
+                                <img src="medias/Icons/NET_Core_Logo.svg" alt="Compétence : création d'application Web API avec ASP.NET Core et C#">
+                                <span>ASP.NET Core</span>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+                <!--Outils-->
+                <article class="skillTheme">
+                    <div class="skillTheme__header">
+                        <img src="medias/Icons/JetBrains_Rider_Icon.svg" alt="Développment d'applications de bureau avec C#">
+                    </div>
+                    <h3 class="skillTheme__title">Outils</h3>
+                    <p class="skillTheme__description">Outils nécessaires à la réalisation de mes projets</p>
+                    <h4 class="skillTheme__title">Logiciels</h4>
+                    <ul class="skillTheme__skills">
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Utilisation de Visual Studio">
+                                <img src="medias/Icons/visual-studio.svg" alt="Utilisation de Visual Studio">
+                                <span>Visual Studio</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Utilisation de Visual Studio Code">
+                                <img src="medias/Icons/visual-studio-code.svg" alt="Utilisation de Visual Studio Code">
+                                <span>VS Code</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Utilisation de JetBrains Rider">
+                                <img src="medias/Icons/JetBrains_Rider_Icon.svg" alt="Utilisation de JetBrains Rider">
+                                <span>JetBrains Rider</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Utilisation de Git">
+                                <img src="medias/Icons/git.svg" alt="Utilisation de Git">
+                                <span>Git</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Utilisation de GitHub">
+                                <img src="medias/Icons/github.svg" alt="Utilisation de GitHub">
+                                <span>GitHub</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skillTheme__skill" data-tooltip="Utilisation de DBeaver">
+                                <img src="medias/Icons/DBeaver_logo.svg" alt="Utilisation de DBeaver">
+                                <span>DBeaver</span>
+                            </div>
+                        </li>
+                    </ul>
+                </article>
+            </div>
+            <div class="navButtonsContainer">
+                <a href="#projects">
+                    <span>Mes projets</span><i class="fa-solid fa-chevron-down fa-bounce"></i>
+                </a>
+                <a href="#landing">
+                    <span>Revenir à l'accueil</span><i class="fa-solid fa-chevron-up fa-bounce"></i>
+                </a>
             </div>
         </div>
     </section>
-    <section id="projects" class="document-section">
+    <section id="projects" class="documentSection">
     </section>
-    <section id="contact" class="document-section">
+    <section id="contact" class="documentSection">
     </section>
 </main>
 </body>
